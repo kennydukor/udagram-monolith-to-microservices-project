@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+spec:
+  selector: # this is the deployment name the service should speak to.
+    app: frontend
+  ports:
+    - protocol: TCP
+    # USE docker ps to see the entry and target ports. e:g 0.0.0.0:8100->80/tcp 
+      port: 8100 # can be any port. This is the very first entry port of a user, in our case we have http://localhost:8100
+      targetPort: 80 # The port the entry port will be redirected to.
