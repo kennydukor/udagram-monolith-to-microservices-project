@@ -29,11 +29,11 @@ spec:
                 name: udacity-proj3-config
             - secretRef:
                 name: udacity-proj3-secrets
-      #     volumeMounts:
-      #       - mountPath: "/root/.aws/"
-      #         name: udagram-aws-config
-      # volumes:
-      #   - name: udagram-aws-config
-      #     configMap:
-      #       name: udagram-aws-config
+          volumeMounts:
+            - mountPath: "/root/.aws/"
+              name: udagram-aws-config
+      volumes:
+        - name: udagram-aws-config
+          configMap:
+            name: udagram-aws-config
 
